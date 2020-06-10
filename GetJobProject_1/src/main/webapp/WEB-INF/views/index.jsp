@@ -171,13 +171,13 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-lg-5 about-right">
+				<h1>
+				주요 게시판
+				</h1>
 				
-					<h1>
-						게시판 FreeView 창(test용)
-					</h1>
 					<div class="wow fadeIn" data-wow-duration="1s">
-						<p>
-							Test용 Div
+						<p> 
+							<jsp:include page="./freeview1.jsp"></jsp:include>
 						</p>
 					</div>
 					<a href="courses.html" class="primary-btn white">해당 게시판으로 이동</a>

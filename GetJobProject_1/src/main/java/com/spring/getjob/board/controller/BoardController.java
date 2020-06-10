@@ -138,5 +138,32 @@ public class BoardController {
     	
     	model.addAttribute("nowday",nowday);
     }
+    
+    
+    
+    @RequestMapping(value="/freeview1")
+    public void freeview1(PageVO vo,Model model) throws Exception {
+    	
+    	List<BoardVO> bd = service.listPage(vo);
+    	
+    	model.addAttribute("list",bd);
+    	
+    	Paging pg = new Paging(vo);
+    	
+    	int totalCount = service.getTotalCount(vo);
+    	
+    	
+    	pg.setTotalCount(totalCount);
+    	
+    	model.addAttribute("pg",pg);
+    	
+    	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+    	Calendar cal = Calendar.getInstance();
+    	//cal.add(Calendar.DAY_OF_MONTH, -3);
+    	
+    	String nowday = format.format(cal.getTime());
+    	
+    	model.addAttribute("nowday",nowday);
+    }
 
 }
