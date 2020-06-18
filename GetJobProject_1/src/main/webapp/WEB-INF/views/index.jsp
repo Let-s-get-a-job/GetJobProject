@@ -71,8 +71,8 @@
 						<li><a href="contact.html">Contact</a></li>
 					</ul>
 					-->
-				 <a href="#" class="primary-btn white">로그인</a>
-				 <a href="#" class="primary-btn white">회원가입</a>
+				 <a href='<c:url value='/login_register'/>' class="primary-btn white">로그인</a>
+				 <a href='<c:url value='/login_register'/>' class="primary-btn white">회원가입</a>
 				 <a href="#" class="primary-btn white">이용방법안내</a>
 				 <br>
 				 
@@ -98,7 +98,7 @@
 						<li class="menu-active"><a href="index.html">자격증</a></li>
 						<li><a href="about.html">직종</a></li>
 						<li><a href="courses.html">기업</a></li>
-						<li class="menu-has-children"><a href="">공지사항</a>
+						<li class="menu-has-children"><a href='<c:url value='/listPage'/>?bdno=1'>공지사항</a>
 							<ul>
 								<li><a href="elements.html">Elements</a></li>
 							</ul>
@@ -176,11 +176,13 @@
 				</h1>
 				
 					<div class="wow fadeIn" data-wow-duration="1s">
+					
 						<p> 
 							<jsp:include page="./freeview1.jsp"></jsp:include>
 						</p>
+						 
 					</div>
-					<a href="courses.html" class="primary-btn white">해당 게시판으로 이동</a>
+					<a href='<c:url value='/listPage'/>?boardName="board"' class="primary-btn white">해당 게시판으로 이동</a>
 				</div>
 						  
 				<div class="offset-lg-1 col-lg-6">

@@ -76,9 +76,9 @@
     </select>
     
     <select id="listPage" resultType="com.spring.getjob.board.vo.BoardVO">
-    	select *
+    	select id,view_cnt,title,content,writer,reg_datetime
     	from board
-    	where id > 0
+    	where id > 0 AND bdno = #{bdno}
     	<include refid="searchCondition"></include>
     	order by id desc, reg_datetime desc
     	limit #{pageStart}, #{perPageNum}

@@ -24,7 +24,7 @@ public class IndexController {
 	public String index(PageVO vo,Model model) throws Exception {
 		
 		
-List<BoardVO> bd = service.listPage(vo);
+        List<BoardVO> bd = service.listPage(vo);
     	
     	model.addAttribute("list",bd);
     	
@@ -44,7 +44,43 @@ List<BoardVO> bd = service.listPage(vo);
     	String nowday = format.format(cal.getTime());
     	
     	model.addAttribute("nowday",nowday);
+    	
 		return "/index";
+	}
+	
+	@RequestMapping(value = "/index2")
+	public String index2(PageVO vo,Model model) throws Exception {
+		
+		
+        List<BoardVO> bd = service.listPage(vo);
+    	
+    	model.addAttribute("list",bd);
+    	
+    	Paging pg = new Paging(vo);
+    	
+    	int totalCount = service.getTotalCount(vo);
+    	
+    	
+    	pg.setTotalCount(totalCount);
+    	
+    	model.addAttribute("pg",pg);
+    	
+    	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+    	Calendar cal = Calendar.getInstance();
+    	//cal.add(Calendar.DAY_OF_MONTH, -3);
+    	
+    	String nowday = format.format(cal.getTime());
+    	
+    	model.addAttribute("nowday",nowday);
+    	
+		return "redirect:/index";
+	}
+	
+	
+	@RequestMapping(value="/login_register")
+	public String login_register() {
+		
+		return "/member/login_register_form";
 	}
 
 }

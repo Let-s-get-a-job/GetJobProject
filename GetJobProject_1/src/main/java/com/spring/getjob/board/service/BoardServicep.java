@@ -31,6 +31,7 @@ public class BoardServicep implements BoardService{
 		
 	}@Override
 	public List<BoardVO> listPage(PageVO vo) throws Exception {
+		
 		return dao.listPage(vo);
 	}@Override
 	public BoardVO selectBoard(BoardVO vo) throws Exception {

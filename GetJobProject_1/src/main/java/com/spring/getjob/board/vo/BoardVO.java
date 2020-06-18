@@ -2,12 +2,22 @@ package com.spring.getjob.board.vo;
 
 public class BoardVO {
 	
+	private int bdno;
 	private int id;
 	private String title;
 	private String content;
 	private String writer;
 	private String reg_datetime;
 	private int view_cnt;
+	
+	
+	
+	public int getBdno() {
+		return bdno;
+	}
+	public void setBdno(int bdno) {
+		this.bdno = bdno;
+	}
 	public int getId() {
 		return id;
 	}

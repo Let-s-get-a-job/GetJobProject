@@ -115,7 +115,12 @@ public class BoardController {
     }
     
     @RequestMapping(value="/listPage")
-    public void listPage(PageVO vo,Model model) throws Exception {
+    public void listPage(PageVO vo,Model model,HttpServletRequest request) throws Exception {
+
+        int bdno = Integer.parseInt(request.getParameter("bdno"));
+    	
+    	model.addAttribute("bdno",bdno);
+    	
     	
     	List<BoardVO> bd = service.listPage(vo);
     	
@@ -130,6 +135,7 @@ public class BoardController {
     	
     	model.addAttribute("pg",pg);
     	
+    	System.out.println(bdno);
     	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
     	Calendar cal = Calendar.getInstance();
     	//cal.add(Calendar.DAY_OF_MONTH, -3);
@@ -140,7 +146,7 @@ public class BoardController {
     }
     
     
-    
+
     @RequestMapping(value="/freeview1")
     public void freeview1(PageVO vo,Model model) throws Exception {
     	

@@ -3,12 +3,16 @@ package com.spring.getjob.paging;
 import org.springframework.web.util.UriComponentsBuilder;
 
 public class PageVO {
+	
+	private int bdno;
     private int page;  // 현재 페이지
     private int perPageNum;  // 페이지당 보여줄 게시물 수 
     private String searchType;
     private String keyword;
     
     public PageVO() {
+    	
+    	this.bdno=1;
     	this.page=1;
     	this.perPageNum=10;
     	this.searchType=null;
@@ -30,7 +34,23 @@ public class PageVO {
 	}
     
     
-    public int getPageStart() {
+
+
+
+
+
+
+
+
+	public int getBdno() {
+		return bdno;
+	}
+
+	public void setBdno(int bdno) {
+		this.bdno = bdno;
+	}
+
+	public int getPageStart() {
     	return (this.page -1) * perPageNum;
     }
 

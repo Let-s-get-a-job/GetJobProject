@@ -142,7 +142,7 @@ table {
 				 <br/>
 				 <br/>
 				 <br/>
-		<a href="#">공지사항</a> / <a href="#">질문과 답변</a> / <a href="#">서비스 개선</a>	 
+		<a href='<c:url value='/listPage'/>?bdno=1'>공지사항 </a> / <a href='<c:url value='/listPage'/>?bdno=2'>질문과 답변</a> / <a href='<c:url value='/listPage'/>?bdno=3'>서비스 개선</a>	 
 		<form id="boardForm" name="boardForm" method="post">
 			<table class="table table-striped table-hover" bgcolor="white">
 				<thead>
